@@ -3,6 +3,9 @@
 
 <head>
 <meta charset="UTF-8">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.3/d3.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/topojson/1.6.9/topojson.min.js"></script>
+<script src="node_modules/datamaps/dist/datamaps.world.min.js"></script>
 <title>Climate Change</title>
 </head>
 
@@ -10,15 +13,93 @@
 
 <h1>Web Application Heading</h1>
 
-<p>Some filler paragraph.</p>
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.3/d3.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/topojson/1.6.9/topojson.min.js"></script>
-<script src="node_modules/datamaps/dist/datamaps.world.min.js"></script>
-
-<div id="container" style="position: relative; width: 500px; height: 300px;"></div>
+<div id="map" style="position: relative;"></div>
 <script>
-    var map = new Datamap({element: document.getElementById('container')});
+    var map = new Datamap({
+    element: document.getElementById("map"),
+    responsive: true,
+    fills: {
+    defaultFill: "#ef6802",
+    visumfrei: "#10c784"
+    },
+    data: {
+    ALB: { fillKey: "visumfrei" },
+    ARE: { fillKey: "visumfrei" },
+    ARG: { fillKey: "visumfrei" },
+    AUS: { fillKey: "visumfrei" },
+    AUT: { fillKey: "visumfrei" },
+    BEL: { fillKey: "visumfrei" },
+    BGR: { fillKey: "visumfrei" },
+    BHS: { fillKey: "visumfrei" },
+    BIH: { fillKey: "visumfrei" },
+    BRA: { fillKey: "visumfrei" },
+    BRN: { fillKey: "visumfrei" },
+    CAN: { fillKey: "visumfrei" },
+    CHE: { fillKey: "visumfrei" },
+    CHL: { fillKey: "visumfrei" },
+    COL: { fillKey: "visumfrei" },
+    CRI: { fillKey: "visumfrei" },
+    CYP: { fillKey: "visumfrei" },
+    CZE: { fillKey: "visumfrei" },
+    DNK: { fillKey: "visumfrei" },
+    ESP: { fillKey: "visumfrei" },
+    EST: { fillKey: "visumfrei" },
+    FIN: { fillKey: "visumfrei" },
+    FRA: { fillKey: "visumfrei" },
+    GBR: { fillKey: "visumfrei" },
+    GEO: { fillKey: "visumfrei" },
+    GRC: { fillKey: "visumfrei" },
+    GTM: { fillKey: "visumfrei" },
+    HND: { fillKey: "visumfrei" },
+    HRV: { fillKey: "visumfrei" },
+    HUN: { fillKey: "visumfrei" },
+    IRL: { fillKey: "visumfrei" },
+    ISL: { fillKey: "visumfrei" },
+    ISR: { fillKey: "visumfrei" },
+    ITA: { fillKey: "visumfrei" },
+    JPN: { fillKey: "visumfrei" },
+    KOR: { fillKey: "visumfrei" },
+    LTU: { fillKey: "visumfrei" },
+    LUX: { fillKey: "visumfrei" },
+    LVA: { fillKey: "visumfrei" },
+    MEX: { fillKey: "visumfrei" },
+    MKD: { fillKey: "visumfrei" },
+    MNE: { fillKey: "visumfrei" },
+    MYS: { fillKey: "visumfrei" },
+    NIC: { fillKey: "visumfrei" },
+    NLD: { fillKey: "visumfrei" },
+    NOR: { fillKey: "visumfrei" },
+    NZL: { fillKey: "visumfrei" },
+    PAN: { fillKey: "visumfrei" },
+    PER: { fillKey: "visumfrei" },
+    POL: { fillKey: "visumfrei" },
+    PRT: { fillKey: "visumfrei" },
+    PRY: { fillKey: "visumfrei" },
+    ROU: { fillKey: "visumfrei" },
+    SLB: { fillKey: "visumfrei" },
+    SLV: { fillKey: "visumfrei" },
+    SRB: { fillKey: "visumfrei" },
+    SVK: { fillKey: "visumfrei" },
+    SVN: { fillKey: "visumfrei" },
+    SWE: { fillKey: "visumfrei" },
+    TLS: { fillKey: "visumfrei" },
+    TTO: { fillKey: "visumfrei" },
+    TWN: { fillKey: "visumfrei" },
+    UKR: { fillKey: "visumfrei" },
+    URY: { fillKey: "visumfrei" },
+    USA: { fillKey: "visumfrei" },
+    VEN: { fillKey: "visumfrei" },
+    VUT: { fillKey: "visumfrei" },
+    DEU: { fillKey: "visumfrei" }
+    // "-99": { fillKey: "marked" }
+    }
+});
+
+//responsive map
+window.addEventListener("resize", function() {
+    map.resize();
+});
+
 </script>
 
 </body>
