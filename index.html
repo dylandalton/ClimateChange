@@ -91,11 +91,21 @@
     TWN: { fillKey: "visumfrei" },
     UKR: { fillKey: "visumfrei" },
     URY: { fillKey: "visumfrei" },
-    USA: { fillKey: "darkblue" },
+    USA: { fillKey: "darkblue", yearlyEmissions: 14.24, bilWealth: 285000650100, predictedOffset: 9.23 },
     VEN: { fillKey: "visumfrei" },
     VUT: { fillKey: "visumfrei" },
     DEU: { fillKey: "visumfrei" }
     // "-99": { fillKey: "marked" }
+    },
+    geographyConfig: {
+        popupTemplate: function(geo, data){
+            return ['<div class="hoverinfo"><strong>', 
+                geo.properties.name + '<br>',
+                'Yearly CO2 Emissions (Tonnes)     ' + data.yearlyEmissions + '<br>',
+                'Total Billionaire Wealth     ' + '$' + data.bilWealth + '<br>',
+                'Predicted CO2 Offset (Tonnes)     ' + data.predictedOffset,
+                ' </strong></div>'].join('');
+        }
     }
 });
 
